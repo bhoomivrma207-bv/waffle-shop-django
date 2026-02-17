@@ -1,0 +1,39 @@
+{% extends "website/layout.html" %}
+
+{% block title %}
+HomePage
+{% endblock %}
+
+{% block content %}
+<h1 class= "text-6xl font-bold"> All Waffle for youu </h1>
+
+<div class= "grid grid-cols-4 gap-10 m-4">
+
+{% for waffle in waffles  %}
+<div class="bg-red-400 p-3 rounded ">
+
+    <img class="w-100 h-64 object-cover rounded" src="{{waffle.image.url}}"  alt="" >
+
+<h3 class= "text-2xl font-bold">{{waffle.name}}</h3>
+
+
+<a href="{% url 'waffle_detail' waffle.id %}">
+    <button 
+    type="button"
+    class="inline-flex items-center w-[50%] justify-center px-4 py-2
+border border-transparent text-sm font-medium rounded-md
+text-white bg-orange-900 [hover: bg-orange-800]
+focus : out line-none focus: ring-2 focus:ring-offset-2
+focus : ring-orange-500"
+    >
+        {{waffle.type}} - {{waffle.id}}    
+    </button>
+</a>
+</div>
+{% endfor %}
+</div>
+
+
+
+{% endblock %}
+

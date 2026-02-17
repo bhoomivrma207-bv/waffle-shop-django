@@ -1,0 +1,62 @@
+{% extends "website/layout.html" %}
+
+{% block title %}
+Waffle Detail Page
+{% endblock %}
+
+{% block content %}
+
+<a
+  href="{% url 'All_Waffle' %}"
+  class="inline-flex items-center p-10 text-gray-800 hover:text-black mb-6"
+>
+  ← Back to all waffles
+</a>
+
+
+<h1 class="text-4xl font-bold"> Waffle Detail Page </h1>
+
+<h3 class="text-2xl  flex justify-center pt-10">{{waffle.name}} </h3>
+
+<p class="text-2xl max-w-5xl w-full px-4 text-center">{{waffle.description}}</p>
+
+
+
+<div class="max-w-5xl mx-auto p-6">
+
+
+
+
+
+  <!-- Card -->
+  <div class="bg-white rounded-2xl shadow-lg overflow-hidden text-center">
+
+    <!-- Image -->
+    <img
+      src="{{ waffle.image.url }}"
+      class="w-80 h-96 object-cover mx-auto"
+    >
+
+    <!-- Content -->
+    <div class="p-6 justify-center mt-6">
+      <h1 class="text-3xl font-bold mb-2">
+        {{ waffle.name }}
+      </h1>
+    </div>
+    
+
+      <!-- Action button -->
+    <div class="flex justify-center mt-6">
+      <button
+        class="mt-100 bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition "
+      >
+        Order Now
+      </button>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
+
+
